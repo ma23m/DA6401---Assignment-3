@@ -29,7 +29,7 @@ We use the **Dakshina Dataset (Ben)** which includes:
 - **Embedding Layer**: Converts decoder input tokens into dense vectors  
 - **LSTM Layer**: Generates output sequence based on context and previous predictions  
 - **Attention Mechanism**: Focuses on relevant parts of the input at each decoding step to improve accuracy
-
+- **Beam Search**: Optional decoding strategy used during inference to improve the quality of generated sequences by exploring multiple candidate outputs
 ---
 
 ##  Model Training
