@@ -29,8 +29,8 @@ The dataset is split into:
 ###  Decoder
 - **Embedding Layer**: Converts output tokens into dense vectors  
 - **RNN/GRU/LSTM**: Generates the output sequence using the context vector and previous outputs  
-- **(Optional) Attention**: Not used in this model, but can enhance performance by focusing on specific input parts
-
+- **Attention**: Not used in this model, but can enhance performance by focusing on specific input parts
+- **Beam Search**: Used during inference to improve decoding by exploring multiple candidate sequences
 ---
 
 ##  Training Procedure
