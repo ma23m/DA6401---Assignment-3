@@ -48,7 +48,6 @@ Hyperparameters are optimized using **Bayesian Optimization**, including:
 - Number of LSTM layers  
 - Hidden size  
 - Dropout rate  
-- Learning rate  
 - Number of epochs  
 
 **Tracking**: All experiments are logged using **Weights & Biases (Wandb)** for reproducibility and analysis.
@@ -79,23 +78,26 @@ After training, the model is tested on the held-out test set:
 | --dropout          | float  | 0.0       | Dropout rate for encoder/decoder. |
 | --batch_size       | int    | 128       | Batch size for training. |
 | --epochs           | int    | 30        | Total number of training epochs. |
-| --patience         | int    | 5         | Early stopping patience (in epochs). |
-| --lr               | float  | 0.001     | Learning rate for the optimizer. |
+
 
 ---
----
+
 ##  How to Run the Code
 - To get the prediction from attention model please run the following command:
 
-```python beam_sweep_attention.py```
+         ```python beam_sweep_attention.py```
 
 - To get the attention heatmap please run the follwing command
 
-```attentionHeatmap.py```
+          ```attentionHeatmap.py```
+
+- To get the attention heatmap with connectivity for the Q6 please run the follwing command
+
+        ```python attention_connectivity.py```
+  
 ##  Example Usage
 
-bash
-python train_seq2seq.py \
+```python train_partB.py \
   --train_path data/train.tsv \
   --dev_path data/dev.tsv \
   --embedding_dim 64 \
@@ -105,16 +107,15 @@ python train_seq2seq.py \
   --decoder_layers 1 \
   --dropout 0.2 \
   --batch_size 128 \
-  --epochs 30 \
-  --patience 5 \
-  --lr 0.001
+  --epochs 30
+ ```
+
+  ---
 
 
----
+## Note:
 
-##  Notes
+- The model is trained using a  ```CUDA-enabled GPU``` (available on ```Kaggle```), since training model requires a lot of computation and would be slow on a regular ```CPU```.
 
--  Install dependencies:
-  bash
-  pip install torch wandb
-  
+
+
