@@ -21,7 +21,7 @@ We use the **Dakshina Dataset (Ben)** which includes:
 
 ###  Encoder
 - **Embedding Layer**: Converts input tokens into fixed-size dense vectors  
-- **Bidirectional LSTM**: Captures dependencies from both past and future input directions  
+- **LSTM**: Captures dependencies from both past and future input directions  
 - **Dropout Layer**: Helps prevent overfitting  
 - **Context Vector**: Summary representation of the input sequence  
 
@@ -29,7 +29,7 @@ We use the **Dakshina Dataset (Ben)** which includes:
 - **Embedding Layer**: Converts decoder input tokens into dense vectors  
 - **LSTM Layer**: Generates output sequence based on context and previous predictions  
 - **Attention Mechanism**: Focuses on relevant parts of the input at each decoding step to improve accuracy
-- **Beam Search**: Optional decoding strategy used during inference to improve the quality of generated sequences by exploring multiple candidate outputs
+- **Beam Search**:  Decoding strategy used during inference to improve the quality of generated sequences by exploring multiple candidate outputs
 ---
 
 ##  Model Training
@@ -70,34 +70,27 @@ After training, the model is tested on the held-out test set:
 |----------------------|----------|-------------|------------------|
 | --train_path       | str    | Required  | Path to training file (TSV format). |
 | --dev_path         | str    | Required  | Path to development/validation file (TSV format). |
-| --embedding_dim    | int    | 64        | Size of word embeddings. |
-| --hidden_size      | int    | 64        | Hidden size of RNN/GRU/LSTM layers. |
-| --cell_type        | str    | 'RNN'     | Type of RNN cell: 'RNN', 'GRU', or 'LSTM'. |
-| --encoder_layers   | int    | 1         | Number of layers in the encoder. |
-| --decoder_layers   | int    | 1         | Number of layers in the decoder. |
-| --dropout          | float  | 0.0       | Dropout rate for encoder/decoder. |
-| --batch_size       | int    | 128       | Batch size for training. |
-| --epochs           | int    | 30        | Total number of training epochs. |
+| --embedding_dim    | int    | 32,64,128,256        | Size of word embeddings. |
+| --hidden_size      | int    | 32,64,128,256       | Hidden size of RNN/GRU/LSTM layers. |
+| --cell_type        | str    | 'RNN','GRU','LSTM'     | Type of RNN cell: 'RNN', 'GRU', or 'LSTM'. |
+| --encoder_layers   | int    | 1,2,3         | Number of layers in the encoder. |
+| --decoder_layers   | int    | 1,2,3         | Number of layers in the decoder. |
+| --dropout          | float  | 0.2,0.3       | Dropout rate for encoder/decoder. |
+| --batch_size       | int    | 32,64      | Batch size for training. |
+| --epochs           | int    | 5,7,10,15,20       | Total number of training epochs. |
 
 
 ---
 
 ##  How to Run the Code
-- To get the prediction from attention model please run the following command:
 
-         ```python beam_sweep_attention.py```
-
-- To get the attention heatmap please run the follwing command
-
-          ```attentionHeatmap.py```
-
-- To get the attention heatmap with connectivity for the Q6 please run the follwing command
-
-        ```python attention_connectivity.py```
   
 ##  Example Usage
 
-```python train_partB.py \
+- Use the following command to start training for one combination:
+
+```
+python train_partB.py \
   --train_path data/train.tsv \
   --dev_path data/dev.tsv \
   --embedding_dim 64 \
@@ -111,7 +104,23 @@ After training, the model is tested on the held-out test set:
  ```
 
   ---
+- To get the prediction from attention model please run the following command:
 
+         ```
+  python beam_sweep_attention.py
+  ```
+
+- To get the attention heatmap please run the follwing command
+
+          ```
+  attentionHeatmap.py
+  ```
+
+- To get the attention heatmap with connectivity for the Q6 please run the follwing command
+
+        ```
+  python attention_connectivity.py
+  ```
 
 ## Note:
 
