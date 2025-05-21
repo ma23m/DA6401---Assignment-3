@@ -64,6 +64,79 @@ After training, the model is evaluated on the test set:
 - **Qualitative Analysis**: Sample transliterations (Latin → Bangla) are included for analysis.
 
 ---
+##  Command-Line Arguments
 
+| Argument             | Type    | Default | Description                                                                 |
+|----------------------|---------|---------|-----------------------------------------------------------------------------|
+| --train_path       | str   | —       | Path to the training .tsv file (required)                                |
+| --dev_path         | str   | —       | Path to the development/validation .tsv file (required)                  |
+| --embedding_dim    | int   | 128   | Dimension of the embedding vectors                                         |
+| --hidden_size      | int   | 256   | Hidden size of the RNN units                                               |
+| --encoder_layers   | int   | 1     | Number of layers in the encoder                                            |
+| --decoder_layers   | int   | 1     | Number of layers in the decoder                                            |
+| --dropout          | float | 0.3   | Dropout probability between RNN layers                                     |
+| --cell_type        | str   | 'LSTM'| Type of RNN cell (RNN, GRU, or LSTM)                                 |
+| --epochs           | int   | 10    | Number of training epochs                                                  |
+| --batch_size       | int   | 32    | Number of samples per training batch                                       |
+
+---
+
+##  How to Run the Training Script
+
+### 1. Install dependencies
+Make sure you have the required Python packages installed:
+
+bash
+pip install torch pandas wandb
+
+
+---
+
+### 2. Prepare your dataset
+
+Your training and development .tsv files should be formatted like:
+
+
+target_word <tab> source_word <tab> frequency
+
+
+For example:
+
+বাংলা	bangla	100
+শব্দ	shobdo	50
+
+
+---
+
+### 3. Run the training script
+
+Use the following command to start training:
+
+bash
+python train_transliteration.py \
+  --train_path /path/to/bn.translit.sampled.train.tsv \
+  --dev_path /path/to/bn.translit.sampled.dev.tsv \
+  --embedding_dim 256 \
+  --hidden_size 512 \
+  --encoder_layers 2 \
+  --decoder_layers 2 \
+  --dropout 0.3 \
+  --cell_type LSTM \
+  --epochs 15 \
+  --batch_size 64
+
+
+---
+
+### 4. Logging and Monitoring
+
+Training logs and performance metrics such as:
+- *Loss*
+- *Character Accuracy*
+- *Word Accuracy*
+
+...will be automatically tracked and visualized in your *[Weights & Biases (wandb)](https://wandb.ai)* dashboard (if you're logged in and have initialized a project).
+
+---
 
 
