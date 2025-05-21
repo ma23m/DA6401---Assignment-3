@@ -70,14 +70,14 @@ After training, the model is evaluated on the test set:
 |----------------------|---------|---------|-----------------------------------------------------------------------------|
 | --train_path       | str   | —       | Path to the training .tsv file (required)                                |
 | --dev_path         | str   | —       | Path to the development/validation .tsv file (required)                  |
-| --embedding_dim    | int   | 128   | Dimension of the embedding vectors                                         |
-| --hidden_size      | int   | 256   | Hidden size of the RNN units                                               |
-| --encoder_layers   | int   | 1     | Number of layers in the encoder                                            |
-| --decoder_layers   | int   | 1     | Number of layers in the decoder                                            |
-| --dropout          | float | 0.3   | Dropout probability between RNN layers                                     |
-| --cell_type        | str   | 'LSTM'| Type of RNN cell (RNN, GRU, or LSTM)                                 |
-| --epochs           | int   | 10    | Number of training epochs                                                  |
-| --batch_size       | int   | 32    | Number of samples per training batch                                       |
+| --embedding_dim    | int   | 32,64,128,256   | Dimension of the embedding vectors                                         |
+| --hidden_size      | int   | 32,64,128,256   | Hidden size of the RNN units                                               |
+| --encoder_layers   | int   | 1,2,3    | Number of layers in the encoder                                            |
+| --decoder_layers   | int   | 1,2,3     | Number of layers in the decoder                                            |
+| --dropout          | float | 0.2,0.3   | Dropout probability between RNN layers                                     |
+| --cell_type        | str   | 'RNN','LSTM','GRU'| Type of RNN cell (RNN, GRU, or LSTM)                                 |
+| --epochs           | int   | 5,7,10,15,20    | Number of training epochs                                                  |
+| --batch_size       | int   | 32,64    | Number of samples per training batch                                       |
 
 ---
 
@@ -85,7 +85,7 @@ After training, the model is evaluated on the test set:
 
 ###  Run the training script
 
-- Use the following command to start training:
+- Use the following command to start training for one combination:
 
 
 ```
