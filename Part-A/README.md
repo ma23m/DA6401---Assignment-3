@@ -83,22 +83,9 @@ After training, the model is evaluated on the test set:
 
 ## How to Run the Code
 
-- To get the prediction from vanilla model please run the following command:
-
-
-     ```python predictionPartA.py```
-
-
-- To get the attention heatmap please run the follwing command
-
-   ```attentionHeatmap.py```
-
-  
-
-
 ###  Run the training script
 
-Use the following command to start training:
+- Use the following command to start training:
 
 
 ```
@@ -115,7 +102,12 @@ python train_partA.py \
   --batch_size 64
 ```
 
+- To get the prediction from vanilla model please run the following command:
 
+
+     ```
+  python predictionPartA.py
+     ```
 ---
 
 ## Note:
