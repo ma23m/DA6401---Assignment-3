@@ -58,9 +58,10 @@ All experiments and metrics are tracked with **Weights & Biases (Wandb)** for re
 ##  Evaluation
 
 After training, the model is evaluated on the test set:
-- **Test Accuracy**: `%`  
+- **Validation Accuracy**:`36.06%`
+- **Test Accuracy**:`35.62%`  
 - **Metrics**: Loss and accuracy  
-- **Qualitative Analysis**: Sample transliterations (Latin → Bangla) are included for analysis
+- **Qualitative Analysis**: Sample transliterations (Latin → Bangla) are included for analysis.
 
 ---
 
