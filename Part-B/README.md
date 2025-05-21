@@ -106,19 +106,19 @@ python train_partB.py \
   ---
 - To get the prediction from attention model please run the following command:
 
-         ```
+  ```
   python beam_sweep_attention.py
   ```
 
 - To get the attention heatmap please run the follwing command
 
-          ```
-  attentionHeatmap.py
+  ```
+   attentionHeatmap.py
   ```
 
 - To get the attention heatmap with connectivity for the Q6 please run the follwing command
 
-        ```
+  ```
   python attention_connectivity.py
   ```
 
