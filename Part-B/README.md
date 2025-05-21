@@ -63,8 +63,7 @@ After training, the model is tested on the held-out test set:
 - **Evaluation Metrics**: Cross-entropy loss, character-level accuracy  
 - **Qualitative Analysis**: Includes sample transliterations to assess output quality
 
----
-##  How to Run the Code
+
 
 ###  Command-Line Arguments
 
@@ -84,7 +83,15 @@ After training, the model is tested on the held-out test set:
 | --lr               | float  | 0.001     | Learning rate for the optimizer. |
 
 ---
+---
+##  How to Run the Code
+- To get the prediction from attention model please run the following command:
 
+```python beam_sweep_attention.py```
+
+- To get the attention heatmap please run the follwing command
+
+```attentionHeatmap.py```
 ##  Example Usage
 
 bash
