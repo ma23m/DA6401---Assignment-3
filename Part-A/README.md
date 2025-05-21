@@ -22,7 +22,7 @@ The dataset is split into:
 
 ###  Encoder
 - **Embedding Layer**: Converts each input token into a dense vector  
-- **Bidirectional RNN/GRU/LSTM**: Captures both forward and backward temporal dependencies  
+- **RNN/GRU/LSTM**: Captures both forward and backward temporal dependencies  
 - **Dropout Layer**: Helps prevent overfitting  
 - **Context Vector**: Fixed-size vector summarizing the encoded input sequence
 
