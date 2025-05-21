@@ -83,17 +83,17 @@ After training, the model is evaluated on the test set:
 
 ## How to Run the Code
 
-- To get the prediction from attention model please run the following command:
+- To get the prediction from vanilla model please run the following command:
 
-   ```python beam_sweep_attention.py```
+
+     ```python predictionPartA.py```
+
 
 - To get the attention heatmap please run the follwing command
 
    ```attentionHeatmap.py```
 
-- To get the attention heatmap with connectivity for the Q6 please run the follwing command
-
-   ```python attention_connectivity.py```
+  
 
 
 ###  Run the training script
@@ -101,7 +101,8 @@ After training, the model is evaluated on the test set:
 Use the following command to start training:
 
 
-```python train_partA.py \
+```
+python train_partA.py \
   --train_path /path/to/bn.translit.sampled.train.tsv \
   --dev_path /path/to/bn.translit.sampled.dev.tsv \
   --embedding_dim 256 \
