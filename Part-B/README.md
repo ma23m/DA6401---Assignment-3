@@ -11,6 +11,7 @@ We use the **Dakshina Dataset (Ben)** which includes:
 - **Target**: Corresponding Bangla script transliterations  
 
 ###  Dataset Splits:
+
 - **Training Set**: Used to train the model  
 - **Validation Set**: Used for tuning and early stopping  
 - **Test Set**: Used to evaluate final performance
