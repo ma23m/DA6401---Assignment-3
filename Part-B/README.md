@@ -58,7 +58,8 @@ Hyperparameters are optimized using **Bayesian Optimization**, including:
 ##  Model Evaluation
 
 After training, the model is tested on the held-out test set:
-- **Test Accuracy**: `30.03%`  
+-**Validation Accuracy**:`39.04%`
+- **Test Accuracy**: `39.26%`  
 - **Evaluation Metrics**: Cross-entropy loss, character-level accuracy  
 - **Qualitative Analysis**: Includes sample transliterations to assess output quality
 
