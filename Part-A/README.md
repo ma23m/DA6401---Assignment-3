@@ -49,7 +49,7 @@ Hyperparameters are optimized using **Bayesian Optimization**:
 - Hidden layer size  
 - Number of layers  
 - Dropout rate  
-- Learning rate  
+
 
 All experiments and metrics are tracked with **Weights & Biases (Wandb)** for reproducibility and visualization.
 
@@ -81,39 +81,27 @@ After training, the model is evaluated on the test set:
 
 ---
 
-##  How to Run the Training Script
+## How to Run the Code
 
-### 1. Install dependencies
-Make sure you have the required Python packages installed:
+- To get the prediction from attention model please run the following command:
 
-bash
-pip install torch pandas wandb
+   ```python beam_sweep_attention.py```
 
+- To get the attention heatmap please run the follwing command
 
----
+   ```attentionHeatmap.py```
 
-### 2. Prepare your dataset
+- To get the attention heatmap with connectivity for the Q6 please run the follwing command
 
-Your training and development .tsv files should be formatted like:
-
-
-target_word <tab> source_word <tab> frequency
+   ```python attention_connectivity.py```
 
 
-For example:
-
-বাংলা	bangla	100
-শব্দ	shobdo	50
-
-
----
-
-### 3. Run the training script
+###  Run the training script
 
 Use the following command to start training:
 
-bash
-python train_transliteration.py \
+
+```python train_partA.py \
   --train_path /path/to/bn.translit.sampled.train.tsv \
   --dev_path /path/to/bn.translit.sampled.dev.tsv \
   --embedding_dim 256 \
@@ -124,18 +112,14 @@ python train_transliteration.py \
   --cell_type LSTM \
   --epochs 15 \
   --batch_size 64
+```
 
 
 ---
 
-### 4. Logging and Monitoring
+## Note:
 
-Training logs and performance metrics such as:
-- *Loss*
-- *Character Accuracy*
-- *Word Accuracy*
-
-...will be automatically tracked and visualized in your *[Weights & Biases (wandb)](https://wandb.ai)* dashboard (if you're logged in and have initialized a project).
+The model is trained using a  ```CUDA-enabled GPU``` (available on ```Kaggle```), since training model requires a lot of computation and would be slow on a regular ```CPU```.
 
 ---
 
