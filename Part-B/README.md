@@ -64,4 +64,50 @@ After training, the model is tested on the held-out test set:
 - **Qualitative Analysis**: Includes sample transliterations to assess output quality
 
 ---
+##  How to Run the Code
 
+###  Command-Line Arguments
+
+| *Argument*         | *Type* | *Default* | *Description* |
+|----------------------|----------|-------------|------------------|
+| --train_path       | str    | Required  | Path to training file (TSV format). |
+| --dev_path         | str    | Required  | Path to development/validation file (TSV format). |
+| --embedding_dim    | int    | 64        | Size of word embeddings. |
+| --hidden_size      | int    | 64        | Hidden size of RNN/GRU/LSTM layers. |
+| --cell_type        | str    | 'RNN'     | Type of RNN cell: 'RNN', 'GRU', or 'LSTM'. |
+| --encoder_layers   | int    | 1         | Number of layers in the encoder. |
+| --decoder_layers   | int    | 1         | Number of layers in the decoder. |
+| --dropout          | float  | 0.0       | Dropout rate for encoder/decoder. |
+| --batch_size       | int    | 128       | Batch size for training. |
+| --epochs           | int    | 30        | Total number of training epochs. |
+| --patience         | int    | 5         | Early stopping patience (in epochs). |
+| --lr               | float  | 0.001     | Learning rate for the optimizer. |
+
+---
+
+##  Example Usage
+
+bash
+python train_seq2seq.py \
+  --train_path data/train.tsv \
+  --dev_path data/dev.tsv \
+  --embedding_dim 64 \
+  --hidden_size 128 \
+  --cell_type LSTM \
+  --encoder_layers 1 \
+  --decoder_layers 1 \
+  --dropout 0.2 \
+  --batch_size 128 \
+  --epochs 30 \
+  --patience 5 \
+  --lr 0.001
+
+
+---
+
+##  Notes
+
+-  Install dependencies:
+  bash
+  pip install torch wandb
+  
