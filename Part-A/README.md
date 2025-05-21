@@ -68,8 +68,8 @@ After training, the model is evaluated on the test set:
 
 | Argument             | Type    | Default | Description                                                                 |
 |----------------------|---------|---------|-----------------------------------------------------------------------------|
-| --train_path       | str   | —       | Path to the training .tsv file (required)                                |
-| --dev_path         | str   | —       | Path to the development/validation .tsv file (required)                  |
+| --train_path       | str   | Required       | Path to the training .tsv file (required)                                |
+| --dev_path         | str   | Required       | Path to the development/validation .tsv file (required)                  |
 | --embedding_dim    | int   | 32,64,128,256   | Dimension of the embedding vectors                                         |
 | --hidden_size      | int   | 32,64,128,256   | Hidden size of the RNN units                                               |
 | --encoder_layers   | int   | 1,2,3    | Number of layers in the encoder                                            |
