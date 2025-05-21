@@ -11,7 +11,6 @@ We use the **Dakshina Dataset (Ben)** which includes:
 - **Target**: Corresponding Bangla script transliterations  
 
 ###  Dataset Splits:
-
 - **Training Set**: Used to train the model  
 - **Validation Set**: Used for tuning and early stopping  
 - **Test Set**: Used to evaluate final performance
@@ -59,7 +58,7 @@ Hyperparameters are optimized using **Bayesian Optimization**, including:
 ##  Model Evaluation
 
 After training, the model is tested on the held-out test set:
--**Validation Accuracy**:`39.04%`
+- **Validation Accuracy**:`39.04%`
 - **Test Accuracy**: `39.26%`  
 - **Evaluation Metrics**: Cross-entropy loss, character-level accuracy  
 - **Qualitative Analysis**: Includes sample transliterations to assess output quality
